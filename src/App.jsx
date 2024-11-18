@@ -3,12 +3,18 @@ import MainView from "./components/MainView";
 // eslint-disable-next-line no-unused-vars
 import HistoryView from "./components/HistoryView";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
-  const [view, setView] = useState('main');
+  const [view, setView] = useState("main");
+
   return (
     <div className="container">
-      {view === "main" ? <MainView setView={setView} /> : <HistoryView setView={setView} />}
+      {view === "main" ? (
+        <MainView setView={setView} />
+      ) : (
+        <HistoryView setView={setView} />
+      )}
     </div>
   );
 }
